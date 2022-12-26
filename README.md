@@ -12,7 +12,7 @@
 - Для корректной работы скрипта требуются установленные: masscan, curl и FreeRDP. <br/>
 
 - Текущая версия 1.32. 
-- Добавлено: поддержка XFCE, поддержка Parrot Security OS, автообновление, выбор сканера (Nmap) из списка, для сканирования локальных адресов из диапазона 127.0.0.1/8, возможность указания сканируемого порта. Исправлена ошибка ложноположительных срабатываний. Исправлена ошибка вылета из скрипта при выборе некоторых стран из списка. Добавлен английский язык. <s>Исправлен баг с брутфорсом.</s> Полностью поменял инструмент для брутфорса. Добавлена Hydra 9.0. Добавлена функция автоматического определения языка ОС. Оптимизирован код скрипта. Добавил автоматическую установку и настройку зависимостей (freerdp-X11, freerdp2-x11, masscan) для работы в "SANA" и "ROLLING". Добавлена возможность запуска скрипта c X11_OVER_SSH. <br/>
+- Добавлено: поддержка XFCE, поддержка Parrot Security OS, автообновление, выбор сканера (Nmap) из списка, для сканирования локальных адресов из диапазона 127.0.0.1/8, возможность указания сканируемого порта. Исправлена ошибка ложноположительных срабатываний. Исправлена ошибка вылета из скрипта при выборе некоторых стран из списка. Добавлен английский язык. <s>Исправлен баг с брутфорсом.</s> Полностью поменял инструмент для брутфорса. Добавлена Hydra 9.3. Добавлена функция автоматического определения языка ОС. Оптимизирован код скрипта. Добавил автоматическую установку и настройку зависимостей (freerdp-X11, freerdp2-x11, masscan) для работы в "SANA" и "ROLLING". Добавлена возможность запуска скрипта c X11_OVER_SSH. <br/>
 
 ## Порядок установки
 
@@ -41,7 +41,7 @@
 - For the script to work correctly, you need to install: masscan, curl and FreeRDP <br/>
 
 - The current version is 1.32.
-- Added: XFCE support, Parrot Security OS support, auto-update, scanner selection (Nmap) from list, to scan local addresses in range 127.0.0.1/8, possibility to specify scanned port. Fixed false positives error. Fixed script exit error when selecting some countries from the list. Added English language to the list. Fixed bug with bruteforce. Completely changed Brutforce tool. Added Hydra 9.0. Added automatic detection of OS language. Optimized script code. Added automatic installation and setup of dependencies (freerdp-X11, freerdp2-x11, masscan) for working in "SANA" and "ROLLING". Added ability to run script with X11_OVER_SSH
+- Added: XFCE support, Parrot Security OS support, auto-update, scanner selection (Nmap) from list, to scan local addresses in range 127.0.0.1/8, possibility to specify scanned port. Fixed false positives error. Fixed script exit error when selecting some countries from the list. Added English language to the list. Fixed bug with bruteforce. Completely changed Brutforce tool. Added Hydra 9.3. Added automatic detection of OS language. Optimized script code. Added automatic installation and setup of dependencies (freerdp-X11, freerdp2-x11, masscan) for working in "SANA" and "ROLLING". Added ability to run script with X11_OVER_SSH
 
 ## Installation
 
