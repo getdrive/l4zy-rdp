@@ -1,0 +1,83 @@
+#!/bin/bash
+#ver=$(cat src/rdp_brute.sh | awk -F'=' '/ver=/ {print $2}' 2> /dev/null)
+#clear
+
+#if [[ $(id -u) -ne 0 ]]
+#	then
+#	clear
+#	echo -e "                      \033[1;31m[This script must be run as ROOT]\E[0m"
+#	echo ""
+#	exit;
+#	else	
+
+#clear
+#echo "Checking for updates..."
+#
+#	TESTINTERNETCONNECTION=$(curl -s ident.me)
+#	if [[ "$TESTINTERNETCONNECTION" != "" ]]
+#	then
+#		updated=$(timeout -s SIGTERM 20 curl -s -k "https://raw.githubusercontent.com/getdrive/Lazy-RDP/master/src/rdp_brute.sh" | awk -F'=' '/ver=/ {print $2}' 2> /dev/null)
+#		if [[ "$ver" != "$updated" ]]
+#		then
+#			clear
+#			echo  "There is an update available."
+#			echo  "Current version: $ver"
+#			echo  "New version: $updated"
+#
+#while true; do
+#		read -p "Update? [Y][N]: " yn
+#			case $yn in
+#			[Yy]* ) wget -O src/rdp_brute.sh https://raw.githubusercontent.com/getdrive/Lazy-RDP/master/src/rdp_brute.sh && wget -O start https://raw.githubusercontent.com/getdrive/Lazy-RDP/master/start && clear; break;;
+#			[Nn]* ) clear;break;;
+#			* ) echo "Enter answer [Y] or [N] ";;
+#		esac
+#	done
+#		fi
+#else
+#echo "It seems there is no internet connection "
+#	 exit;
+#fi
+clear
+####################################################usual_start#######################################################
+usual_start()
+{
+dt=$(echo $XDG_CURRENT_DESKTOP)
+	if [[ "$dt" = "GNOME" ]]; then	
+	sudo gnome-terminal --geometry=105x24+380+180 --hide-menubar -e ./src/rdp_brute.sh 2> /dev/null
+		elif [[ "$dt" = "XFCE" ]]; then
+		sudo xfce4-terminal --geometry=105x24+380+180 --hide-menubar -e ./src/rdp_brute.sh 2> /dev/null
+		elif [[ "$dt" = "MATE" ]]; then
+		sudo mate-terminal --geometry=105x24+380+180 --hide-menubar -e ./src/rdp_brute.sh 2> /dev/null
+else echo "You need to use GNOME or XFCE desktop"; exit;
+fi
+}
+####################################################X11_over_ssh######################################################
+x11_over_ssh()
+{
+clear
+#echo "";
+#echo -e "1. gnome-terminal"; 
+#echo -e "2. xfce-terminal";
+#echo "";
+#read -p "Choose your terminal: " term
+#if [[ "$term" = "1" ]]; then
+#	sudo gnome-terminal --geometry=105x24+380+180 --hide-menubar -e ./src/rdp_brute.sh 2> /dev/null  
+#			elif [[ "$term" = "2" ]]; then
+#			sudo xfce4-terminal --geometry=105x24+380+180 --hide-menubar -e ./src/rdp_brute.sh 2> /dev/null
+#	else echo "You need to use GNOME or XFCE desktop"; exit;
+#fi
+sudo xfce4-terminal --geometry=105x24+380+180 --hide-menubar -e ./src/rdp_brute.sh 2> /dev/null
+}
+########################################################################################################################
+#fi
+echo ""
+while true; do
+		read -p "Want to use X11_OVER_SSH? [Y][N]: " yn
+			case $yn in
+			[Yy]* )x11_over_ssh; clear; break;;
+			[Nn]* )usual_start; clear;break;;
+			* ) echo "Enter answer [Y] or [N] ";;
+		esac
+	done
+
+#

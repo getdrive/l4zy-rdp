@@ -1,0 +1,156 @@
+#!/bin/bash
+CHECKROOT ()
+{
+	if [[ $(id -u) -ne 0 ]]
+	then
+	clear
+	echo -e "                      \033[1;31m[This script must be run as ROOT]\E[0m"
+	exit 1
+	else
+	echo ""
+fi	
+}
+
+CHECKDISTR ()
+{
+distr=$(cat /etc/*-release | awk -F'=' '/VERSION_CODENAME=/ {print $2}')
+distrp=$(cat /etc/*-release | awk -F'=' '/VERSION_CODENAME=/ {print $2}')
+	if [ "$distr" = "sana" ]; then
+	cat /etc/apt/sources.list > /etc/apt/sources.list_lazybak
+		echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list.d/kali_rolling.list
+		#echo "deb http://old.kali.org/kali sana main non-free contrib" > /etc/apt/sources.list
+	elif [ "$distr" = "kali-rolling" ]; then
+		cat /etc/apt/sources.list > /etc/apt/sources.list_lazybak
+		echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list
+	elif [ "$distr" = "\"kali-rolling\"" ]; then
+	cat /etc/apt/sources.list > /etc/apt/sources.list_lazybak
+		echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list
+	elif [ "$distrp" = "bullseye" ]; then
+	cat /etc/apt/sources.list > /etc/apt/sources.list_lazybak
+		echo "deb http://archive.parrotsec.org/parrot parrot main contrib non-free" > /etc/apt/sources.list.d/parrot.list
+	
+	else
+		echo -e "$aquamarine[Скрипт тестировался только для $red[Kali Linux2 и ParrotSec]$aquamarine. Вы можете самостоятельно изменить код скрипта для своей ОС.]$colorbase"
+		echo -e "$aquamarine[The script was tested only for $red[Kali Linux2 & ParrotSec]$aquamarine. You are free to modify the code for your operating system]$colorbase"
+	exit 1
+fi
+}
+######################################################################################
+CHECKDEPEND0 ()
+{
+depend=$(dpkg -s masscan  | grep 'Status' | awk -F':' '/Status: / {print $2}')
+	if [ "$depend" = " install ok installed" ]; then
+		clear 
+			
+			else
+			echo -e "$aquamarine"
+clear
+		echo    "Требующийся пакет MASSCAN не установлен. I'll try to fix it)"
+               
+			sudo apt-get update -y; sudo apt install masscan -y
+	
+fi
+
+}
+######################################################################################
+CHECKDEPEND1 ()
+{
+depend=$(dpkg -s nmap | grep 'Status' | awk -F':' '/Status: / {print $2}')
+	if [ "$depend" = " install ok installed" ]; then
+		clear 
+			else
+			echo -e "$aquamarine"
+		echo    "Требующийся пакет nmap не установлен. I'll try to fix it)"
+			 sudo apt-get update -y; sudo apt install nmap -y
+	
+fi
+
+}
+######################################################################################
+CHECKDEPEND2 ()
+{
+depend=$(dpkg -s xfce4-terminal| grep 'Status' | awk -F':' '/Status: / {print $2}')
+	if [ "$depend" = " install ok installed" ]; then
+		clear 
+			else
+			echo -e "$aquamarine"
+clear	
+	echo    "Требующийся пакет xfce4-terminal не установлен. I'll try to fix it)"
+                
+		sudo apt update -y; sudo apt install xfce4-terminal -y
+fi
+
+}
+######################################################################################
+CHECKDEPEND2.1 ()
+{
+depend=$(dpkg -s gnome-terminal| grep 'Status' | awk -F':' '/Status: / {print $2}')
+	if [ "$depend" = " install ok installed" ]; then
+		clear 
+			else
+			echo -e "$aquamarine"
+clear	
+	echo    "Требующийся пакет gnome-terminal не установлен. I'll try to fix it)"
+                
+		sudo apt update -y; sudo apt install gnome-terminal -y
+fi
+
+}
+
+######################################################################################
+CHECKDEPEND3 ()
+{
+depend=$(dpkg -s freerdp2-x11| grep 'Status' | awk -F':' '/Status: / {print $2}')
+	if [ "$depend" = " install ok installed" ]; then
+		clear 
+			else
+			echo -e "$aquamarine"
+clear		
+echo    "Требующийся пакет FreeRDP2 не установлен. I'll try to fix it)"
+                 sudo apt update -y; sudo apt install freerdp2-x11 -y
+		
+fi
+}
+######################################################################################
+CHECKDEPEND3.1 ()
+{
+depend=$(dpkg -s freerdp2-dev| grep 'Status' | awk -F':' '/Status: / {print $2}')
+	if [ "$depend" = " install ok installed" ]; then
+		clear 
+			else
+			echo -e "$aquamarine"
+clear		
+echo    "Требующийся пакет FreeRDP2-dev не установлен. I'll try to fix it)"
+                 sudo apt update -y; sudo apt install freerdp2-dev -y
+		
+fi
+}
+
+#########################################################################################
+CHECKDEPEND4 (){
+depend=$(dpkg -s curl  | grep 'Status' | awk -F':' '/Status: / {print $2}')
+	if [ "$depend" = " install ok installed" ]; then
+		clear 
+			
+			else
+			echo -e "$aquamarine"
+		        echo    "Требующийся пакет Curl не установлен. I'll try to fix it)"
+			sudo apt update -y; sudo apt install curl -y
+		
+fi
+}
+############################################################################################
+rm -rf /usr/bin/hydra; apt remove hydra -y
+CHECKROOT
+CHECKDISTR
+CHECKDEPEND0
+CHECKDEPEND1
+CHECKDEPEND2
+CHECKDEPEND2.1
+CHECKDEPEND3
+CHECKDEPEND3.1
+CHECKDEPEND4
+cd hydra && make clean | ./configure && make && make install
+clear
+echo "Now you can run ./start!"
+exit;
