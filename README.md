@@ -19,9 +19,9 @@
 
 - Установка <br/>
                
-	  git clone https://github.com/getdrive/lazy-rdp
+	  git clone https://github.com/getdrive/l4zy-rdp
 	  
-	  cd lazy-rdp && chmod +x hydra/configure hydra/hydra src/rdp_brute.sh patator.py start INSTALL
+	  cd l4zy-rdp && chmod +x hydra/configure hydra/hydra src/rdp_brute.sh start INSTALL
 
 - Установка зависимостей <br/>
         
@@ -47,9 +47,9 @@
 
 - Setting <br/>
          
-	  git clone https://github.com/getdrive/lazy-rdp
+	  git clone https://github.com/getdrive/l4zy-rdp
 	  
-	  cd lazy-rdp && chmod +x hydra/configure hydra/hydra src/rdp_brute.sh patator.py start INSTALL
+	  cd l4zy-rdp && chmod +x hydra/configure hydra/hydra src/rdp_brute.sh start INSTALL
 
 
 - Installing dependencies <br/>
