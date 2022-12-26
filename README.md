@@ -1,4 +1,4 @@
-# Lazy-RDP. ReUpload
+# Lazy-RDP. ReUploaded
 
 ## Demo Video:
 [![Lazy-RDP Demo](https://i.ytimg.com/vi/Kpl8l6YQq48/hqdefault.jpg)](https://youtu.be/Kpl8l6YQq48)
