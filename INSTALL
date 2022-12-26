@@ -152,6 +152,6 @@ CHECKDEPEND3.1
 CHECKDEPEND4
 cd hydra && make clean | ./configure && make && make install
 clear
-chmod src/rdp_brute.sh
+chmod +x src/rdp_brute.sh start
 echo "Now you can run ./start!"
 exit;
