@@ -28808,7 +28808,7 @@ done
 clear
 echo -e " $colorbase              +-----------------------------------------------------------------------+"   
 echo -e "               |   $grey                          1.$yellow Hydra   9.3           $colorbase                 |";
-echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
+##echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
 echo -e "               +-----------------------------------------------------------------------+"
 read -p "                                          Выберите брутфорсер : " btool
 echo -e "$red-------------------------------------------------------------------------------"
@@ -28865,7 +28865,7 @@ done
 clear
 echo -e " $colorbase              +-----------------------------------------------------------------------+"   
 echo -e "               |   $grey                          1.$yellow Hydra   9.3          $colorbase                  |";
-echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
+##echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
 echo -e "               +-----------------------------------------------------------------------+"
 read -p "                                          Выберите брутфорсер : " btool
 echo -e "$red-------------------------------------------------------------------------------"
@@ -28919,7 +28919,7 @@ done
 clear
 echo -e " $colorbase              +-----------------------------------------------------------------------+"   
 echo -e "               |   $grey                          1.$yellow Hydra   9.3          $colorbase                  |";
-echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
+#echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
 echo -e "               +-----------------------------------------------------------------------+"
 read -p "                                          Выберите брутфорсер : " btool
 echo -e "$red-------------------------------------------------------------------------------"
@@ -28960,7 +28960,7 @@ if [ "$brutmenu" = "4" ]; then
 clear
 echo -e " $colorbase              +-----------------------------------------------------------------------+"   
 echo -e "               |   $grey                          1.$yellow Hydra   9.3          $colorbase                  |";
-echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
+#echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
 echo -e "               +-----------------------------------------------------------------------+"
 read -p "                                          Выберите брутфорсер : " btool
 echo -e "$red-------------------------------------------------------------------------------"
@@ -29038,7 +29038,7 @@ clear
 
 echo -e " $colorbase              +-----------------------------------------------------------------------+"   
 echo -e "               |   $grey                          1.$yellow Hydra   9.3          $colorbase                  |";
-echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
+#echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
 echo -e "               +-----------------------------------------------------------------------+"
 read -p "                                          Choice bruteforce tool : " btool
 echo -e "$red-------------------------------------------------------------------------------"
@@ -29096,7 +29096,7 @@ clear
 
 echo -e " $colorbase              +-----------------------------------------------------------------------+"   
 echo -e "               |   $grey                          1.$yellow Hydra   9.3          $colorbase                  |";
-echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
+#echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
 echo -e "               +-----------------------------------------------------------------------+"
 read -p "                                          Choice bruteforce tool : " btool
 echo -e "$red-------------------------------------------------------------------------------"
@@ -29151,7 +29151,7 @@ clear
 
 echo -e " $colorbase              +-----------------------------------------------------------------------+"   
 echo -e "               |   $grey                          1.$yellow Hydra   9.3          $colorbase                  |";
-echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
+#echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
 echo -e "               +-----------------------------------------------------------------------+"
 read -p "                                          Choice bruteforce tool : " btool
 echo -e "$red-------------------------------------------------------------------------------"
@@ -29194,7 +29194,7 @@ clear
 
 echo -e " $colorbase              +-----------------------------------------------------------------------+"   
 echo -e "               |   $grey                          1.$yellow Hydra   9.3          $colorbase                  |";
-echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
+#echo -e "               |   $grey                          2.$yellow Patator 0.9$colorbase                            |";
 echo -e "               +-----------------------------------------------------------------------+"
 read -p "                                          Choice bruteforce tool : " btool
 echo -e "$red-------------------------------------------------------------------------------"
