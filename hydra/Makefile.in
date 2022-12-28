@@ -1,0 +1,8 @@
+XDEFINES= -DLIBOPENSSL -DHAVE_ZLIB -DLIBFREERDP -DLIBWINPR2 -DLIBSMBCLIENT -DHAVE_MATH_H 
+XLIBS= -lz -lssl -lcrypto -lfreerdp2 -lwinpr2 -lsmbclient
+XLIBPATHS=-L/usr/lib -L/usr/local/lib -L/lib -L/lib/i386-linux-gnu -L/lib/x86_64-linux-gnu
+XIPATHS= -I/usr/include/freerdp2 -I/usr/include/winpr2 -I/usr/include/samba-4.0
+PREFIX=/usr/local
+XHYDRA_SUPPORT=
+STRIP=strip
+
