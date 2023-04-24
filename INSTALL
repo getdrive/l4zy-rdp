@@ -141,6 +141,7 @@ fi
 }
 ############################################################################################
 rm -rf /usr/bin/hydra; apt remove hydra -y
+apt install hydra -y
 CHECKROOT
 CHECKDISTR
 CHECKDEPEND0
